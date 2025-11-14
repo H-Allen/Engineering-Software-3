@@ -20,8 +20,8 @@ int main()
     }
 
     while (1) {
-        switch_data = XGpio_DiscreteRead(&SLIDE_SWITCHES, 1);
-        XGpio_DiscreteWrite(&LED_OUT, 1, switch_data);
+        slideSwitchIn = XGpio_DiscreteRead(&SLIDE_SWITCHES, 1);
+        XGpio_DiscreteWrite(&LED_OUT, 1, slideSwitchIn);
     }
 
     cleanup_platform();

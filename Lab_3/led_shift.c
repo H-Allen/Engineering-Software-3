@@ -17,7 +17,7 @@ int main() {
 
     XStatus status;
     status = initGpio();
-    status = setUpnterruptSystem();
+    status = setUpInterruptSystem();
 
     if (status != XST_SUCCESS) {
         return XST_FAILURE;

@@ -23,7 +23,7 @@ int main() {
         return XST_FAILURE;
     }
 
-    status = setUpnterruptSystem();
+    status = setUpInterruptSystem();
     if (status != XST_SUCCESS) {
         return XST_FAILURE;
     }
@@ -36,7 +36,7 @@ int main() {
         if (counter == 0) {
             ledValue = rotateLeft(ledValue, 1);
             XGpio_DiscreteWrite(&LED_OUT, 1, ledValue);
-            limit = limit / 3
+            limit = limit / 3;
             if (limit == 0) {
                 limit = 27;
             }
