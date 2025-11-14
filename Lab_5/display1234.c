@@ -4,10 +4,14 @@
 #include "seg7_display.h"
 #include "gpio_init.h"
 
-int main() {
+u16 slideSwitchIn = 0;
+
+int main()
+{
     init_platform();
     int status;
 
+    //initialise the GPIOs
     status = initGpio();
     if(status != XST_SUCCESS) {
         print("GPIO Initialization Failed\r\n");
@@ -16,29 +20,17 @@ int main() {
     }
 
     //Set up the interrupt system
-    status = setupInterruptSystem();
+    status = setUpInterruptSystem();
     if(status != XST_SUCCESS) {
         print("Interrupt Setup Failed\r\n");
         cleanup_platform();
         return 0;
     }
 
-    u16 pushBtnLeftIn = 0;
-    u16 counter = 0;
-
-    while(1)
+    while (1)
     {
-        displayNumber(counter);
-        pushBtnLeftIn = XGpio_DiscreteRead(&P_BTN_LEFT, 1);
-        if(pushBtnLeftIn == 1) {
-            while (pushBtnLeftIn == 1) {
-                pushBtnLeftIn = XGpio_DiscreteRead(&P_BTN_LEFT, 1);
-                displayNumber(counter);
-            }
-            counter++;
-        }
+        displayNumber(1234);
     }
-    
     cleanup_platform();
     return 0;
 }

@@ -20,7 +20,7 @@ int main() {
     }
 
     //Set up the interrupt system
-    status = setupInterruptSystem();
+    status = setUpInterruptSystem();
     if(status != XST_SUCCESS) {
         print("Interrupt Setup Failed\r\n");
         cleanup_platform();
@@ -68,7 +68,7 @@ int main() {
             {
                 //Read the slide switch value and apply a bitmasl 
                 //This keeps the lower 4 bits, resulting in a value from 0 to 15
-                u16 switchVal = XGpio_DiscreteRead(&SLIDE_SWITCHES, 1) & 0x0F;
+                u16 switchVal = XGpio_DiscreteRead(&SLIDE_SWITCHES, 1);
                 
                 //Add the switch value to the switchCounter, wrapping around at 9999
                 switchCounter = (switchCounter + switchVal) % 10000;
