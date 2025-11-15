@@ -1,0 +1,3 @@
+Key Takeaways:
+- 7 Segment display operation and GPIO initialisation
+- Also includes some buttons etc...
