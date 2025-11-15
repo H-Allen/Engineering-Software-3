@@ -1,0 +1,4 @@
+Key Takeaways:
+- Basic pointer operations/ use
+- Basic bubble sort (unoptimised)
+- More compled LED IO
