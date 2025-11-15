@@ -1,0 +1,3 @@
+Key Takeaways
+- Mainly for coursework 1
+- Optimisation techniques through loop unrolling and pipelining
