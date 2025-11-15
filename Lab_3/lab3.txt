@@ -1,3 +1,3 @@
 Key Takeaways:
 - LED IO
--  
+- How to look in the premade files to find GPIO device IDs
